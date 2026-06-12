@@ -315,9 +315,8 @@
     .bundle-card.selected { border-color:var(--pink-fluor); box-shadow:0 6px 20px rgba(245,10,120,0.14); }
     .bundle-save { position:absolute; top:-10px; left:12px; background:var(--pink-fluor); color:#fff; font-family:var(--font-title); font-size:9.5px; font-weight:800; letter-spacing:0.03em; padding:3px 8px; border-radius:20px; white-space:nowrap; }
     .bundle-badge { position:absolute; top:-10px; right:12px; background:var(--dark); color:#fff; font-family:var(--font-title); font-size:8.5px; font-weight:800; letter-spacing:0.05em; text-transform:uppercase; padding:3px 7px; border-radius:20px; white-space:nowrap; }
-    .bundle-ph { width:100%; aspect-ratio:16/10; border-radius:var(--radius-sm); background:linear-gradient(160deg,var(--pink-soft),var(--pink-light)); margin:4px 0 10px; display:flex; align-items:center; justify-content:center; overflow:hidden; }
-    .bundle-ph img { width:100%; height:100%; object-fit:contain; }
-    .bundle-ph small { font-family:var(--font-title); font-size:8.5px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--pink-mid); padding:0 6px; }
+    .bundle-ph { width:100%; aspect-ratio:1/1; border-radius:var(--radius-sm); background:var(--white); margin:4px 0 10px; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+    .bundle-ph img { width:100%; height:100%; object-fit:cover; }
     .bundle-qty { display:block; font-family:var(--font-title); font-size:15px; font-weight:800; color:var(--dark); }
     .bundle-frags { display:block; font-family:var(--font-body); font-size:11px; line-height:1.3; color:#5a545a; margin:3px 0 9px; min-height:29px; }
     .bundle-old { display:block; font-family:var(--font-title); font-size:11px; color:var(--gray); text-decoration:line-through; }
@@ -397,24 +396,21 @@
           </button>
           <button class="bundle-card" data-kit="2-unidades" onclick="selKit(this)">
             <span class="bundle-save">-24%</span>
-            <!-- TODO: trocar pelo mockup do kit 2 un quando chegar -->
-            <span class="bundle-ph" data-kit-mockup="2-unidades"><small>Mockup<br>em breve</small></span>
+            <span class="bundle-ph"><img src="./assets/images/mockup-kit-2.webp" alt="Kit 2 unidades — Velvet Vanilla e Iconic Fame" width="200" height="200" loading="lazy" /></span>
             <span class="bundle-qty">2 unidades</span>
             <span class="bundle-frags">Velvet Vanilla + Iconic Fame</span>
             <span class="bundle-old">R$ 92,44</span><span class="bundle-now">R$ 69,90</span><span class="bundle-unit">R$ 34,95/un</span>
           </button>
           <button class="bundle-card selected featured" data-kit="3-unidades" onclick="selKit(this)" aria-pressed="true">
             <span class="bundle-save">-35%</span><span class="bundle-badge">Mais vendido</span>
-            <!-- TODO: trocar pelo mockup do kit 3 un quando chegar -->
-            <span class="bundle-ph" data-kit-mockup="3-unidades"><small>Mockup<br>em breve</small></span>
+            <span class="bundle-ph"><img src="./assets/images/mockup-kit-3.webp" alt="Kit 3 unidades — Velvet Vanilla, Charm Way e Iconic Fame" width="200" height="200" loading="lazy" /></span>
             <span class="bundle-qty">3 unidades</span>
             <span class="bundle-frags">Velvet Vanilla + Charm Way + Iconic Fame</span>
             <span class="bundle-old">R$ 138,66</span><span class="bundle-now">R$ 89,90</span><span class="bundle-unit">R$ 29,96/un</span>
           </button>
           <button class="bundle-card" data-kit="4-unidades" onclick="selKit(this)">
             <span class="bundle-save">-41%</span><span class="bundle-badge">Melhor custo</span>
-            <!-- TODO: trocar pelo mockup do kit 4 un quando chegar -->
-            <span class="bundle-ph" data-kit-mockup="4-unidades"><small>Mockup<br>em breve</small></span>
+            <span class="bundle-ph"><img src="./assets/images/mockup-kit-4.webp" alt="Kit 4 unidades — a coleção completa" width="200" height="200" loading="lazy" /></span>
             <span class="bundle-qty">4 unidades</span>
             <span class="bundle-frags">A coleção completa — as 4 fragrâncias</span>
             <span class="bundle-old">R$ 184,88</span><span class="bundle-now">R$ 109,90</span><span class="bundle-unit">R$ 27,47/un</span>
