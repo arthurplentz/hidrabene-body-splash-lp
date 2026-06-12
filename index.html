@@ -745,21 +745,32 @@
       irParaOferta();
     }
 
-    // Checkout — colar o link em CHECKOUT_URL quando tiver
-    var CHECKOUT_URL = ''; // ex: 'https://checkout.hidrabene.com.br/body-splash'
+    // Checkout Yampi — 1 un: link por fragrância; kits 2/3/4: link por kit
+    var CHECKOUT_UNIT = {
+      'Charm Way':      'https://hidrabene.pay.yampi.com.br/r/75CNXY9QZL',
+      'Fine Bloom':     'https://hidrabene.pay.yampi.com.br/r/S0S6J9GT64',
+      'Velvet Vanilla': 'https://hidrabene.pay.yampi.com.br/r/MQIVH41JZW',
+      'Iconic Fame':    'https://hidrabene.pay.yampi.com.br/r/RQP8YVGFQO'
+    };
+    var CHECKOUT_KIT = {
+      '2-unidades': 'https://hidrabene.pay.yampi.com.br/r/348ROFJCXB',
+      '3-unidades': 'https://hidrabene.pay.yampi.com.br/r/CUFP4NTPJQ',
+      '4-unidades': 'https://hidrabene.pay.yampi.com.br/r/FW4L9X2F7U'
+    };
     function comprarAgora(){
-      if(kitSelecionado === '1-unidade' && !fragSelecionada){
-        document.getElementById('fragBlock').scrollIntoView({behavior:'smooth', block:'center'});
-        alert('Escolha primeiro a fragrância do seu Body Splash.');
-        return;
+      if(kitSelecionado === '1-unidade'){
+        if(!fragSelecionada){
+          document.getElementById('fragBlock').scrollIntoView({behavior:'smooth', block:'center'});
+          alert('Escolha primeiro a fragrância do seu Body Splash.');
+          return;
+        }
+        var u = CHECKOUT_UNIT[fragSelecionada];
+        if(u){ window.location.href = u; return; }
+      } else {
+        var k = CHECKOUT_KIT[kitSelecionado];
+        if(k){ window.location.href = k; return; }
       }
-      var frag = (kitSelecionado === '1-unidade') ? fragSelecionada : kitFrags[kitSelecionado];
-      if(CHECKOUT_URL){
-        var sep = CHECKOUT_URL.includes('?') ? '&' : '?';
-        window.location.href = CHECKOUT_URL + sep + 'kit=' + encodeURIComponent(kitSelecionado) + '&fragrancia=' + encodeURIComponent(frag);
-        return;
-      }
-      alert('Body Splash Hidrabene\nKit: ' + kitSelecionado + '\nFragrância(s): ' + frag + '\n\nO link do checkout será configurado em CHECKOUT_URL.');
+      alert('Body Splash Hidrabene\nKit: ' + kitSelecionado + '\n\nLink de checkout não configurado para esta opção.');
     }
 
     // Estado inicial (kit padrão = 3 un → seletor de fragrância travado)
